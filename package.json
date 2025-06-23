@@ -13,8 +13,9 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "@phosphor-icons/react": "^2.1.7",
-    "@tamagui/config": "^1.112.0",
-    "@tamagui/vite-plugin": "^1.112.0",
+    "@tamagui/config": "1.112.0",
+    "@tamagui/vite-plugin": "1.112.0",
+    "tamagui": "1.112.0",
     "esbuild": "0.23.1",
     "firebase": "^10.13.2",
     "firebase-admin": "^12.7.0",
@@ -23,7 +24,6 @@
     "primereact": "^10.8.3",
     "react-router-dom": "^6.26.2",
     "react-scripts": "^5.0.1",
-    "tamagui": "^1.112.0",
     "victory": "^37.3.0"
   },
   "devDependencies": {

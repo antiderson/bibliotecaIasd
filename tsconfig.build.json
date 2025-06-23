@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "noEmit": false,
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "rootDir": "./", // Permite importar arquivos fora de src
+        "esModuleInterop": true // Habilita a compatibilidade com módulos CommonJS
+    },
+    "include": [
+        "src",
+        "tamagui.config.ts"
+    ]
+}
