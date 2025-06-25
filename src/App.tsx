@@ -1,18 +1,29 @@
 // import { useState } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { TamaguiProvider } from 'tamagui'
 import { PrimeReactProvider } from 'primereact/api';
-import './App.css'
 import Login from './pages/login/Login'
 import tamaguiConfig from './tamagui.config'
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
-  // const [count, setCount] = useState(0)
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Dashboard />
+    },{
+      path: '/login',
+      element: <Login />
+    }
+  ])
+
 
   return (
     <>
       <TamaguiProvider config={tamaguiConfig}>
         <PrimeReactProvider>
-        <Login />
+        <RouterProvider router={router} />
         </PrimeReactProvider>
       </TamaguiProvider>
     </>
