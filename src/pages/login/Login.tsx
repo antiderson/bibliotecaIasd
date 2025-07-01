@@ -1,7 +1,7 @@
 import { Toast } from "primereact/toast";
 import { CopyrightIcon, InfoIcon } from "@phosphor-icons/react"
 import { useState, useRef } from "react";
-import { XStack, YStack, Button, Image, H6 } from "tamagui";
+import { XStack, YStack, Button, Image } from "tamagui";
 import fundoLogin from '../../assets/fundo_login.png'
 import logo from '../../assets/logo.svg';
 import styles from './index.module.css';
@@ -10,14 +10,14 @@ import { SheetPsswd } from "../../components/sheetPsswd/SheetPsswd";
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [error] = useState('');
     const toast = useRef<Toast>(null);
-  
+
 
     const handleLogin = () => {
         console.log('Email:', email);
     }
-    
+
     return (
         <XStack style={{ maxWidth: "100%" }} >
             <YStack style={{

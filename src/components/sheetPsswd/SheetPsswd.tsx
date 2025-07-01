@@ -3,14 +3,14 @@ import { H4, H6, Separator, Sheet, XStack, YStack } from 'tamagui';
 
 export const SheetPsswd = () => {
     const [open, setOpen] = React.useState(false)
-    const [modal, setModal] = React.useState(true)
+    const [modal] = React.useState(true)
 
     return (
         <>
             <YStack>
                 <XStack $sm={{ flexDirection: 'column', alignItems: 'center' }}>
                     <H6 mr='10px' size={"$3"}>Esqueceu a senha?</H6>
-                    <a onClick={() => setOpen(true)} style={{ color: '#003366', cursor: 'pointer', fontFamily:'Poppins' }}>Clique Aqui</a>
+                    <a onClick={() => setOpen(true)} style={{ color: '#003366', cursor: 'pointer', fontFamily: 'Poppins' }}>Clique Aqui</a>
                 </XStack>
             </YStack>
             <Sheet
