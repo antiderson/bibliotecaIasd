@@ -6,6 +6,9 @@ import fundoLogin from '../../assets/fundo_login.png'
 import logo from '../../assets/logo.svg';
 import styles from './index.module.css';
 import { SheetPsswd } from "../../components/sheetPsswd/SheetPsswd";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {  db, auth } from "../../services/firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -14,8 +17,21 @@ export default function Login() {
     const toast = useRef<Toast>(null);
 
 
-    const handleLogin = () => {
-        console.log('Email:', email);
+    const handleLogin = async () => {
+        try {
+            const userCredendials = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredendials.user;
+            const userDocRef = doc(db, 'users', user.uid);
+            const userDoc = await getDoc(userDocRef);
+
+            if (userDoc.exists()) {
+                const userData = userDoc.data();
+                // Aqui você pode fazer algo com os dados do usuário, como redirecionar para outra página
+                console.log('Usuário autenticado:', userData);
+            }
+        } catch (err) {
+
+        }
     }
 
     return (

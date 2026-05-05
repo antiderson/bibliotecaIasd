@@ -4,8 +4,8 @@ export default function Dashboard() {
     
     
     return (
-        <XStack style={{ maxWidth: "100%" }} >
-            <h1>dashboard</h1>
+        <XStack maxWidth={"100%"} bg={"$red10"} >
+            <h1 style={{color:'#708090'}}>dashboards</h1>
         </XStack>
     )
 }
